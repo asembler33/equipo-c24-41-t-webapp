@@ -14,6 +14,6 @@ router.delete('/:id',deleteUser);
 //actualizar un usuario
 router.put('/:id', updateUser);
 //iniciar sesion
-router.post("/login", login);
+router.post('/login', login);
 
 export default router;

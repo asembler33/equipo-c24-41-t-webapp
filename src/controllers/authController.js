@@ -2,6 +2,9 @@ import UserRepository from "../repositories/UserRepository.js";
 import { generateToken } from "../utils/jwt.js";
 
 export const login = async (req, res) => {
+
+    
+    console.log('Cuerpo de la petición:', req.body);
     const { email, password } = req.body;
 
     try {
@@ -17,7 +20,7 @@ export const login = async (req, res) => {
 
         const token = generateToken(user._id);
 
-        res.json({ message: "Login successful", token });
+        res.json({ message: "Login successful", token, role:user.role });
     } catch (error) {
         res.status(500).json({ message: "Error during login", error: error.message });
     }
