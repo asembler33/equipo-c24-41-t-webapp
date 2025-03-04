@@ -7,6 +7,7 @@ import productRoutes from "./routes/product.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import dotenv from "dotenv";
 import fileUpload from 'express-fileupload';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.engine("handlebars", engine({ defaultLayout: "main", layoutsDir: "./src/view
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
 
-
+app.use(cors());
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
