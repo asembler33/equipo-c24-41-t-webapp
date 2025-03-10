@@ -8,7 +8,6 @@ import userRoutes from "./routes/user.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 import dotenv from "dotenv";
 import fileUpload from 'express-fileupload';
-import cors from 'cors';
 import { swaggerUi, swaggerSpecs} from "./config/swaggerConfig.js";
 
 dotenv.config();
